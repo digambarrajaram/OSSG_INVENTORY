@@ -25,4 +25,54 @@ public class Inventory_Controller {
 		return si.getAllProjects();
 	}
 	
+	@PostMapping("/addproject")
+	public String addProject(@RequestBody Projects project) {
+		
+		try {
+			si.addProject(project);
+			return "Project Added";
+		} catch (Exception e) {
+			return "Project Not Added";
+		}
+		
+		
+	}
+	
+	@PostMapping("/addserver")
+	public String addServer(@RequestBody Inventory inventory) {
+		
+		try {
+			si.addServer(inventory);
+			return "Server Added";
+		} catch (Exception e) {
+			return "Server Not Added";
+		}
+	}
+	
+	@PostMapping("/deleteserver/{sid}")
+	public String deleteServer(@PathVariable("sid") int sid) {
+		
+		try {
+			si.deleteServer(sid);
+			return "Server Deleted";
+		} catch (Exception e) {
+			return "Server Not Deleted";
+		}
+		
+	}
+	
+	@PostMapping("/deleteproject/{pid}")
+	public String deleteProject(@PathVariable("pid") int pid) {
+		
+		try {
+			si.deleteProject(pid);
+			return "Project Deleted";
+		} catch (Exception e) {
+			return "Project Not Deleted";
+		}
+		
+	}
+	
+	
+	
 }

@@ -11,4 +11,9 @@ public interface Service_Declarations {
 	public List<Inventory> getAllServers();
 	public List<Projects> getAllProjects();
 	
+	public void addProject(Projects project);
+	public void addServer(Inventory inventory);
+	
+	public void deleteServer(int sid);
+	public void deleteProject(int pid);
 }

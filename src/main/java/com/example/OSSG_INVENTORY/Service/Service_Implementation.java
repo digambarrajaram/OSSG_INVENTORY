@@ -36,4 +36,30 @@ public class Service_Implementation implements Service_Declarations {
 	public List<Projects> getAllProjects() {
 		return pr.findAll();
 	}
+
+	@Override
+	@Transactional
+	public void addProject(Projects project) {
+		pr.save(project);
+		
+	}
+
+	@Override
+	@Transactional
+	public void addServer(Inventory inventory) {
+		ir.save(inventory);
+		
+	}
+
+	@Override
+	@Transactional
+	public void deleteServer(int sid) {
+		ir.deleteById(sid);
+	}
+
+	@Override
+	@Transactional
+	public void deleteProject(int pid) {
+		pr.deleteById(pid);
+	}
 }
