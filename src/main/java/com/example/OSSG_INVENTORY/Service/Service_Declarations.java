@@ -16,4 +16,7 @@ public interface Service_Declarations {
 	
 	public void deleteServer(int sid);
 	public void deleteProject(int pid);
+	
+	public void updateServer(Inventory inventory);
+	
 }

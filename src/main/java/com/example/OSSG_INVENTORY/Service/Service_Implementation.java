@@ -62,4 +62,11 @@ public class Service_Implementation implements Service_Declarations {
 	public void deleteProject(int pid) {
 		pr.deleteById(pid);
 	}
+
+	@Override
+	@Transactional
+	public void updateServer(Inventory inventory) {
+		// TODO Auto-generated method stub
+		ir.save(inventory);
+	}
 }
